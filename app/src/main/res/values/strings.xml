@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Public Api</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="list_fragment_label">List Fragment</string>
+    <string name="details_fragment_label">Details Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_list_fragment">Hello list fragment</string>
+    <string name="hello_details_fragment">Hello details fragment. Arg: %1$s</string>
+    <string name="user_title">Sabbir Ahmed</string>
+</resources>
