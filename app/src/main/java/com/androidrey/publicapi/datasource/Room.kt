@@ -6,7 +6,6 @@ import androidx.paging.PagingSource
 import androidx.room.*
 import com.androidrey.publicapi.model.User
 
-
 @Dao
 interface UserDao {
     @Query("select * from User")
@@ -15,8 +14,6 @@ interface UserDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertAll(users: List<User>)
 }
-
-
 
 @Database(entities = [User::class], version = 1)
 

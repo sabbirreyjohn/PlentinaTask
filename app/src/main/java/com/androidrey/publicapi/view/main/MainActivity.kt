@@ -8,7 +8,6 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import com.androidrey.publicapi.R
 
 class MainActivity : AppCompatActivity(R.layout.activity_main) {
-
     private lateinit var navController: NavController
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,7 +20,6 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
 
     override fun onSupportNavigateUp(): Boolean {
         return navController.navigateUp() || super.onSupportNavigateUp()
-
     }
 }
 

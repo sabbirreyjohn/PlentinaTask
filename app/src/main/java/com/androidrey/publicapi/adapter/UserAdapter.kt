@@ -11,14 +11,10 @@ import com.androidrey.publicapi.model.User
 import com.androidrey.publicapi.view.listscreen.ListFragmentDirections
 
 class UserAdapter : ListAdapter<User, UserAdapter.TheViewHolder>(DiffCallback){
-
-
     class TheViewHolder(
         private var binding:
         RowUserItemBinding
-    ) :
-        RecyclerView.ViewHolder(binding.root) {
-
+    ) : RecyclerView.ViewHolder(binding.root) {
         fun bind(user: User) {
             binding.user = user
             binding.executePendingBindings()
@@ -26,7 +22,6 @@ class UserAdapter : ListAdapter<User, UserAdapter.TheViewHolder>(DiffCallback){
                 val action = ListFragmentDirections.actionListFragmentToDetailsFragment(user)
                 binding.root.findNavController().navigate(action)
             }
-
         }
     }
 
@@ -35,7 +30,7 @@ class UserAdapter : ListAdapter<User, UserAdapter.TheViewHolder>(DiffCallback){
             return oldItem.userId == newItem.userId
         }
         override fun areContentsTheSame(oldItem: User, newItem: User): Boolean {
-            return oldItem.userAvatar == newItem.userAvatar
+            return oldItem == newItem
         }
     }
 

@@ -12,14 +12,9 @@ import java.io.IOException
 
 enum class ApiStatus { LOADING, DONE, ERROR }
 class ListViewModel(application: Application) : AndroidViewModel(application) {
-
     val repo = ListRepository(getDatabase(application))
-
-
     private val _status = MutableLiveData<ApiStatus>()
     val status: LiveData<ApiStatus> get() = _status
-
-
     val users = repo.getUsersFromDB()
 
     init {
@@ -39,5 +34,4 @@ class ListViewModel(application: Application) : AndroidViewModel(application) {
             }
         }
     }
-
 }

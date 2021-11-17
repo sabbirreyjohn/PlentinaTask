@@ -10,10 +10,8 @@ import com.androidrey.publicapi.view.listscreen.ApiStatus
 import com.androidrey.publicapi.model.User
 import android.view.View
 
-
 @BindingAdapter("imageUrl")
 fun bindImage(imgView: ImageView, imageUrl: String?) {
-
     imageUrl?.let {
         val imageUri = imageUrl.toUri().buildUpon().scheme("https").build()
         imgView.load(imageUri) {
@@ -28,18 +26,15 @@ fun bindRecyclerView(
     recyclerView: RecyclerView,
     data: List<User>?
 ) {
-
     val adapter = recyclerView.adapter as UserAdapter
     adapter.submitList(data)
 }
 
 @BindingAdapter("srcByApiStatus")
 fun bindByApiStatus(imageView: ImageView, status: ApiStatus) {
-
     when (status) {
         ApiStatus.DONE -> {
             imageView.visibility = View.INVISIBLE
-
         }
 
         ApiStatus.ERROR -> {
@@ -52,5 +47,4 @@ fun bindByApiStatus(imageView: ImageView, status: ApiStatus) {
             imageView.setImageResource(R.drawable.loading_animation)
         }
     }
-
 }

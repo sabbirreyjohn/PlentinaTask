@@ -13,12 +13,11 @@ import com.androidrey.publicapi.model.User
  * A simple [Fragment] subclass as the second destination in the navigation.
  */
 class DetailsFragment : Fragment() {
-
     private var _binding: FragmentDetailsBinding? = null
-
     private val binding get() = _binding!!
 
     private lateinit var user: User
+
     private val viewModel: DetailsViewModel by viewModels {
         DetailsViewModelFactory(
             requireActivity().application,
@@ -52,5 +51,4 @@ class DetailsFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
-
 }

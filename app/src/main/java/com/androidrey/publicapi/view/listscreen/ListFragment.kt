@@ -12,7 +12,6 @@ import com.androidrey.publicapi.databinding.FragmentListBinding
  * A simple [Fragment] subclass as the default destination in the navigation.
  */
 class ListFragment : Fragment() {
-
     private val viewModel: ListViewModel by viewModels()
     lateinit var adapter: UserAdapter
 
@@ -20,7 +19,6 @@ class ListFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
         val binding = FragmentListBinding.inflate(inflater, container, false)
         binding.lifecycleOwner = this
         binding.viewModel = viewModel

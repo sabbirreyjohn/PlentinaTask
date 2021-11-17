@@ -7,7 +7,6 @@ import com.androidrey.publicapi.model.User
 import kotlinx.coroutines.launch
 
 class DetailsViewModel(application: Application, user: User) : AndroidViewModel(application) {
-
     val repo = DetailsRepository()
 
     private var _profile = MutableLiveData<Profile>()
@@ -28,7 +27,6 @@ class DetailsViewModel(application: Application, user: User) : AndroidViewModel(
             }
         }
     }
-
 }
 
 class DetailsViewModelFactory(private val mApplication: Application, private val user: User) :

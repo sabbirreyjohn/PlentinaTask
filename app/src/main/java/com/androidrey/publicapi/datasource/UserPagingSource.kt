@@ -6,13 +6,12 @@ import com.androidrey.publicapi.model.User
 import java.lang.Exception
 
 class UserPagingSource : PagingSource<Int, User>() {
-
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, User> {
-        return try{
+        return try {
             val sinceUserId: Int = params.key ?: LAST_USER_ID
             val response = UserApi.userInterface.getusers(sinceUserId)
-            LoadResult.Page( response, null, response.last().userId.toInt())
-        }catch (e: Exception){
+            LoadResult.Page(response, null, response.last().userId.toInt())
+        } catch (e: Exception) {
             LoadResult.Error(e)
         }
     }
